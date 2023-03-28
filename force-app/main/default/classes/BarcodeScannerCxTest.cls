@@ -18,14 +18,14 @@ public class BarcodeScannerCxTest {
         String invalidApiName = 'Nam';
         
         test.startTest();
-		String validUpdate = BarcodeScannerCx.interpretBarcode(accList[0].Id, validApiName, expectText);
-        String invalidUpdate = BarcodeScannerCx.interpretBarcode(accList[0].Id, invalidApiName, expectText);       
-        String errorUpdate = BarcodeScannerCx.interpretBarcode(accList[0].Id, validApiName, '');
+		String validUpdate = BarcodeScannerCx.interpretBarcode(accList[0].Id, '','', validApiName, expectText);
+        String invalidUpdate = BarcodeScannerCx.interpretBarcode(accList[0].Id, '','', invalidApiName, expectText);       
+        String errorUpdate = BarcodeScannerCx.interpretBarcode(accList[0].Id, '','', validApiName, '');
         test.stopTest();
         
         system.assertEquals(BarcodeScannerCx.successMsg, validUpdate);
         system.assertEquals(BarcodeScannerCx.invalidApiName, invalidUpdate);
-        system.assert(errorUpdate.contains(BarcodeScannerCx.updateError));
+        system.assert(errorUpdate.contains(BarcodeScannerCx.upsertError));
     }
     
     static testMethod void getIdSobjectTypeTest() {

@@ -29,6 +29,8 @@ export default class BarcodeScanner extends NavigationMixin(LightningElement) {
 	@api instructions = 'Press the button below to open the camera. Position a barcode in the scanner window to scan it.';
 	@api instructionsColor = '#888888';
 	@api debug = false;
+	@api childsObjectApiName;
+	@api relationFieldApiName;
     @api fieldApiName;
 	@api successMessage = 'Success!';
 	@api recordId;
@@ -81,7 +83,7 @@ export default class BarcodeScanner extends NavigationMixin(LightningElement) {
 	}
 
 	handleBarCode() {
-        interpretBarcode({recordId: this.recordId, fieldApiName: this.fieldApiName, barcodeText: this.scannedBarcode})
+        interpretBarcode({recordId: this.recordId, childsObjectApiName: this.childsObjectApiName, relationFieldApiName: this.relationFieldApiName, fieldApiName: this.fieldApiName, barcodeText: this.scannedBarcode})
         .then(result => {
             if(result=='Success') {
                 this.dispatchEvent(
