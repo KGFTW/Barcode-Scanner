@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<LightningComponentBundle xmlns="http://soap.sforce.com/2006/04/metadata">
+    <apiVersion>56.0</apiVersion>
+    <isExposed>true</isExposed>
+    <masterLabel>Barcode Scanner</masterLabel>
+    <description>Lightning web component that scans a barcode and returns the captured text on the current record in the specified field.</description>
+    <targets>
+        <target>lightning__RecordPage</target>
+    </targets>
+    <targetConfigs>
+        <targetConfig targets="lightning__RecordPage">
+            <property name="cardTitle" label="Card Title" type="String" default="Barcode Scanner" description="The title to be used at the top of the card." />
+            <property name="hideComponentIfNoScanner" label="Hide if no scanner available" type="Boolean" default="false" description="Hide the component entirely if no scanner is available; otherwise just show a greyed-out button." />
+            <property name="debug" label="Show debug panel after scan" type="Boolean" default="false" description="Show the raw text of the scanned barcode in a panel after the scan is complete." />
+            <property name="buttonLabel" label="Button label" type="String" default="Scan Barcode" description="The label on the button that initiates the barcode scan." />
+            <property name="instructions" label="Instruction text" type="String" default="Press the button below to open the camera. Position a barcode in the scanner window to scan it." description="Instructions for using the bar code scanner." />
+            <property name="instructionsColor" label="Instruction text color" type="String" default="#888888" description="Color of the instructions text, in rgb(x,y,z) or #xxyyzz format." />
+            <property name="fieldApiName" label="Field Api Name" type="String" description="Api Name of the field in which to transcribe the retrieved QR Code content, must be a text field" required="true" />
+            <property name="successMessage" label="Flow/Apex success message" type="String" default="Success!" description="A message that will appear in a toast when the flow or Apex class is successfully run." />
+            <supportedFormFactors>
+                <supportedFormFactor type="Small" />
+            </supportedFormFactors>
+        </targetConfig>
+    </targetConfigs>
+  </LightningComponentBundle>
