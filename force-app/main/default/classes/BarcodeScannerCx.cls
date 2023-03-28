@@ -10,7 +10,7 @@ public with sharing class BarcodeScannerCx {
     @testVisible
     static final String successMsg = 'Success';
     @testVisible
-    static final String invalidApiName = 'Provided field doesn\'t exist for the provided sobject. Please Update the component configuration to match a compatible text field.';
+    static final String invalidApiName = 'Provided field doesn\'t exist for the provided sobject. Please update the component configuration to match a compatible text field.';
     @testVisible
     static final String upsertError = 'An error occured during the update:';
 	@testVisible
