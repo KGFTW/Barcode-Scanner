@@ -29,8 +29,6 @@ export default class BarcodeScanner extends NavigationMixin(LightningElement) {
 	@api instructions = 'Press the button below to open the camera. Position a barcode in the scanner window to scan it.';
 	@api instructionsColor = '#888888';
 	@api debug = false;
-	@api childsObjectApiName;
-	@api relationFieldApiName;
     @api fieldApiName;
 	@api successMessage = 'Success!';
 	@api recordId;
